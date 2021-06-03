@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: config-client
+  profiles: dev,cloud
+  cloud:
+    bootstrap.enabled: true
+    config:
+      uri: ${vcap.services.config-server.credentials.uri:http://localhost:8888}

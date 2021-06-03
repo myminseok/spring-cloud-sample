@@ -1,0 +1,8 @@
+server.port: 8888
+spring:
+  cloud:
+    config:
+      name: configserver2
+      server.git:
+        uri: file:///Users/minseok/_dev/spring-cloud-sample-v2/config-repo
+        default-label: master

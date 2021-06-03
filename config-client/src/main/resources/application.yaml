@@ -1,0 +1,14 @@
+spring:
+  application.name: config-client
+  ## profiles: dev,cloud
+  #profiles.active: dev,cloud
+  profiles.active: devx
+  config:
+    import: optional:configserver:${vcap.services.config-server.credentials.uri:http://localhost:8888}
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
