@@ -30,7 +30,7 @@ import org.springframework.security.web.server.SecurityWebFilterChain;
 //https://docs.spring.io/spring-boot/docs/2.0.0.BUILD-SNAPSHOT/reference/html/boot-features-security-webflux.html
 //https://docs.spring.io/spring-security/site/docs/current/reference/html5/
 
-@Profile("dev")
+@Profile({"dev","cloud","prod"})
 @Configuration
 @EnableWebFluxSecurity
 @EnableReactiveMethodSecurity
