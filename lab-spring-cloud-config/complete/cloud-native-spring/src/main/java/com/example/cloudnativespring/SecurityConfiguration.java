@@ -23,7 +23,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 
 //https://docs.pivotal.io/spring-cloud-services/3-1/common/config-server/writing-client-applications.html
 
-@Profile("dev")
+@Profile({"dev","cloud"})
 @Configuration
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
 
