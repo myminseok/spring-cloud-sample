@@ -1,6 +1,6 @@
 spring:
   application:
-    name: cloud-native-spring
+    name: my-cloud-native-spring
   profiles.active: dev
 
 server.port: 8080
