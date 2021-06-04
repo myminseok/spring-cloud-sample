@@ -2,10 +2,7 @@ spring:
   application:
     name: cloud-native-spring
   profiles.active: dev
-  cloud:
-    config:
-      uri: ${vcap.services.my-config-server.credentials.uri:http://localhost:8888}
-    
+
 server.port: 8080
 
 management:
