@@ -50,7 +50,7 @@ public class MyController {
 		notes.add(note);
 		request.getSession().setAttribute("NOTES", notes);
 
-		List<String> notes = (List<String>) request.getSession().getAttribute("NOTES");
+		notes = (List<String>) request.getSession().getAttribute("NOTES");
 		System.out.println("notes.size:"+notes.size());
 	}
 
