@@ -7,3 +7,4 @@ applications:
       - java_buildpack_offline
     services:
       - my-cloudcache
+      - my-cloud-config

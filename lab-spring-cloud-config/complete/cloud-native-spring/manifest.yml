@@ -7,4 +7,3 @@ applications:
       - java_buildpack_offline
     services:
       - my-config-server
-      - greeter-service-registry
