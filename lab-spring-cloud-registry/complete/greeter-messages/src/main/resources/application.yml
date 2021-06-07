@@ -5,6 +5,7 @@ spring:
 
 server.port: 9001
 
+##  you can comment out all eureka config on TAS
 eureka:
   client:
     serviceUrl:
