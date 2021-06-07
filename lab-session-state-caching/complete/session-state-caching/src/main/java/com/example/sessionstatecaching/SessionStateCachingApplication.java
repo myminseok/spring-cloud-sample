@@ -1,4 +1,4 @@
-package com.example.cloudnativespring;
+package com.example.sessionstatecaching;
 
 
 import org.springframework.boot.SpringApplication;
@@ -8,10 +8,10 @@ import org.springframework.geode.config.annotation.EnableClusterAware;
 
 @SpringBootApplication
 @EnableClusterAware
-public class CloudNativeSpringApplication {
+public class SessionStateCachingApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(CloudNativeSpringApplication.class, args);
+		SpringApplication.run(SessionStateCachingApplication.class, args);
 	}
 
 }

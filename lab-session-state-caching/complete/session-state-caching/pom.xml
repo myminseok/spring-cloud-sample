@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
-	<artifactId>cloud-native-spring</artifactId>
+	<artifactId>session-state-caching</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>cloud-native-spring</name>
 	<description>Demo project for Spring Boot</description>
