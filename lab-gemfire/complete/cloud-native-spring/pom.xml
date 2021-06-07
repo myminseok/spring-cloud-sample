@@ -15,13 +15,9 @@
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>1.8</java.version>
-		<spring-cloud-services.version>2.3.0.RELEASE</spring-cloud-services.version>
-		<spring-cloud.version>Hoxton.SR11</spring-cloud.version>
 		<springGeodeVersion>1.4.0</springGeodeVersion>
 	</properties>
 	<dependencies>
-
-		<!-- !!!!!!! DONOT use wefflux with web at the same time, otherwise, security error occurs -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
@@ -31,14 +27,6 @@
 			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>io.pivotal.spring.cloud</groupId>
-			<artifactId>spring-cloud-services-starter-config-client</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-security</artifactId>
-		</dependency>
-		<dependency>
 			<groupId>org.springframework.geode</groupId>
 			<artifactId>spring-geode-starter</artifactId>
 		</dependency>
@@ -46,7 +34,6 @@
 			<groupId>org.springframework.geode</groupId>
 			<artifactId>spring-geode-starter-session</artifactId>
 		</dependency>
-
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
@@ -62,23 +49,9 @@
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
-				<groupId>org.springframework.cloud</groupId>
-				<artifactId>spring-cloud-dependencies</artifactId>
-				<version>${spring-cloud.version}</version>
-				<type>pom</type>
-				<scope>import</scope>
-			</dependency>
-			<dependency>
 				<groupId>org.springframework.geode</groupId>
 				<artifactId>spring-geode-bom</artifactId>
 				<version>${springGeodeVersion}</version>
-				<type>pom</type>
-				<scope>import</scope>
-			</dependency>
-			<dependency>
-				<groupId>io.pivotal.spring.cloud</groupId>
-				<artifactId>spring-cloud-services-dependencies</artifactId>
-				<version>${spring-cloud-services.version}</version>
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>

@@ -11,29 +11,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-public class MyController {
-
-	private final MyConfig menu;
-
-	public MyController(MyConfig menu) {
-		this.menu = menu;
-	}
-
-    @GetMapping("/")
-    public String hello() {
-        return "Hello World!";
-    }
-
-
-	@GetMapping("/menu")
-	public String restaurant() {
-		return String.format("Today's special is: %s", menu.getSpecial());
-	}
+public class SessionTest {
 
 	@GetMapping("/getSessionNotes")
 	public List<String> getSessionNotes(HttpServletRequest request) {
 		List<String> notes = (List<String>) request.getSession().getAttribute("NOTES");
-		System.out.println("notes.size:"+notes.size());
 		return notes;
 	}
 
@@ -45,13 +27,8 @@ public class MyController {
 			notes = new ArrayList<>();
 		}
 
-		System.out.println("note:"+note);
-
 		notes.add(note);
 		request.getSession().setAttribute("NOTES", notes);
-
-		notes = (List<String>) request.getSession().getAttribute("NOTES");
-		System.out.println("notes.size:"+notes.size());
 	}
 
 	@PostMapping("/invalidateSession")
