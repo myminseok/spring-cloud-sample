@@ -5,4 +5,3 @@ applications:
     path: ./target/cloud-native-spring-0.0.1-SNAPSHOT.jar
     services:
       - my-config-server
-      - greeter-service-registry
