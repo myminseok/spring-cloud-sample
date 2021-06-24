@@ -1,5 +1,5 @@
 applications:
-  - name: cloud-native-spring
+  - name: cloud-native-spring-registry
     random-route: true
     instances: 1
     path: ./target/cloud-native-spring-0.0.1-SNAPSHOT.jar

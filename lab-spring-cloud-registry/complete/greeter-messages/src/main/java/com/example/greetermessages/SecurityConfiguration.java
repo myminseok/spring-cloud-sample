@@ -19,13 +19,12 @@ package com.example.greetermessages;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
-@Profile("dev")
+//https://docs.pivotal.io/spring-cloud-services/3-1/common/config-server/writing-client-applications.html
+@Profile({"dev","cloud","prod"})
 @Configuration
-@EnableWebSecurity
-public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
+public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
@@ -35,5 +34,4 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 				.httpBasic().disable()
 				.csrf().disable();
 	}
-
 }
