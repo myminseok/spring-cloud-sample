@@ -1,0 +1,16 @@
+spring:
+  profiles.active: dev
+  application:
+    name: greeter-messages
+
+server.port: 9001
+
+##  you can comment out all eureka config on TAS
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${vcap.services.eureka-service.credentials.uri:http://127.0.0.1:8761}/eureka/
+
+#logging:
+#  pattern:
+#    level: "%5p [${spring.zipkin.service.name:${spring.application.name:-}},%X{X-B3-TraceId:-},%X{X-B3-SpanId:-},%X{X-Span-Export:-}] [%X{ddd:-},%X{bp:-},%X{bpids:-}] [%X{op:-},%X{chunk:-},%X{i:-}]"

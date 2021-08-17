@@ -1,0 +1,10 @@
+applications:
+  - name: greeter-messages
+    random-route: true
+    instances: 1
+    path: ./target/greeter-messages-0.0.1-SNAPSHOT.jar
+    buildpacks:
+      - java_buildpack_offline
+    services:
+      - greeter-service-registry
+
