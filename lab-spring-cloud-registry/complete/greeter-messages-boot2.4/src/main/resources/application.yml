@@ -1,11 +1,28 @@
+server.port: 9001
+
 spring:
   profiles.active: dev
   application:
     name: greeter-messages
 
-server.port: 9001
+eureka:         #tells about the Eureka server details and its refresh time
+  instance:
+    leaseRenewalIntervalInSeconds: 1
+    leaseExpirationDurationInSeconds: 2
 
-eureka:
+
+    non-secure-port-enabled: true  # uncomment to use 'apps.internal' domain on TAS
+    non-secure-port: 8080          # uncomment to use 'apps.internal' domain on TAS
+    secure-port-enabled: false     # uncomment to use 'apps.internal' domain on TAS
+    #secure-port:
+
+    #hostname:
+    #preferIpAddress: false
+
   client:
     serviceUrl:
       defaultZone: http://127.0.0.1:8761/eureka/
+    healthcheck:
+      enabled: true
+    lease:
+      duration: 5

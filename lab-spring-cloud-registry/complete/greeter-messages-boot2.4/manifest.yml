@@ -7,4 +7,6 @@ applications:
       - java_buildpack_offline
     services:
       - greeter-service-registry
+    routes:
+      - route: greeter-messages.apps.internal
 

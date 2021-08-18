@@ -1,4 +1,4 @@
-package com.example.cloudnativespring;
+package com.example.greeter;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;

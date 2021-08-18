@@ -1,4 +1,4 @@
-package com.example.cloudnativespring;
+package com.example.greeter;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
@@ -27,6 +27,12 @@ public class GreeterController {
     public WebClient.Builder loadBalancedWebClientBuilder() {
         return WebClient.builder();
     }
+
+    @RequestMapping(value = "/")
+    public String home(){
+        return this.hello("hello", "default");
+    }
+
 
     @RequestMapping(value = "/hello")
     public String hello(@RequestParam(value = "salutation", defaultValue = "Hello") String salutation,
