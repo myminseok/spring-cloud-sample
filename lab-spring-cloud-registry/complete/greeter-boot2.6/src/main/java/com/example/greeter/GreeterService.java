@@ -14,10 +14,8 @@ import reactor.core.publisher.Mono;
 public class GreeterService {
 
 
-    @Autowired
     private final RestTemplate rest;
 
-    @Autowired
     private WebClient.Builder webClient;
 
     private static final String BACKEND_SERVICE="greeter-messages";
@@ -27,9 +25,6 @@ public class GreeterService {
             .queryParam("name", "{name}")
             .build()
             .toUriString();
-
-
-
 
     public GreeterService(RestTemplate restTemplate, WebClient.Builder webClient) {
         this.rest = restTemplate;

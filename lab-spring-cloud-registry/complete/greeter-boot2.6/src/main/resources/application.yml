@@ -4,8 +4,6 @@ spring:
   application:
     name: greeter
     profiles.active: dev
-  main:
-    allow-circular-references: true
 
 ## you can comment out all eureka config on TAS
 eureka:
