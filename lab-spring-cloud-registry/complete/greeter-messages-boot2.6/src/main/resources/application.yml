@@ -15,10 +15,10 @@ eureka:
     lease:
       duration: 5
 
-  #tells about the Eureka server details and its refresh time
-  instance:
-    leaseRenewalIntervalInSeconds: 1
-    leaseExpirationDurationInSeconds: 2
+  ## tells about the Eureka server details and its refresh time
+  #instance:
+    # leaseRenewalIntervalInSeconds: 1
+    # leaseExpirationDurationInSeconds: 2
     # non-secure-port-enabled: true  # uncomment to use 'apps.internal' domain on TAS.
     # non-secure-port: 8080          # uncomment to use 'apps.internal' domain on TAS. do not uncomment on other env. it will chnage port 8080
     # secure-port-enabled: false     # uncomment to use 'apps.internal' domain on TAS.
