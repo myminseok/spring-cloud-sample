@@ -31,25 +31,17 @@ import org.springframework.web.client.RestTemplate;
 @RestController
 public class GreeterController {
 
-    @Autowired
-    private GreeterService greeter;
+    private GreeterService greeterService;
 
-    @Bean
-    @LoadBalanced
-    public RestTemplate restTemplate() {
-        return new RestTemplate();
+    public GreeterController(GreeterService greeterService){
+        this.greeterService = greeterService;
     }
 
-    @Bean
-    @LoadBalanced
-    public WebClient.Builder loadBalancedWebClientBuilder() {
-        return WebClient.builder();
-    }
 
     @RequestMapping(value = "/hello")
     public String hello(@RequestParam(value = "salutation", defaultValue = "Hello") String salutation,
                         @RequestParam(value = "name", defaultValue = "Bob") String name) {
-        Greeting greeting = greeter.greetRestTemplate(salutation, name);
+        Greeting greeting = greeterService.greetRestTemplate(salutation, name);
         return greeting.getMessage();
     }
 
@@ -58,7 +50,7 @@ public class GreeterController {
     public Mono<String> helloWebclient(@RequestParam(value = "salutation", defaultValue = "Hello") String salutation,
                                        @RequestParam(value = "name", defaultValue = "Bob") String name) {
 
-        return greeter.greetWebClient(salutation, name);
+        return greeterService.greetWebClient(salutation, name);
     }
 
 

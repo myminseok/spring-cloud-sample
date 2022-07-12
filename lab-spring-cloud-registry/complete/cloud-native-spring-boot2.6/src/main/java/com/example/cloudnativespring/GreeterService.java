@@ -23,9 +23,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
-
 import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Mono;
 
@@ -33,11 +31,8 @@ import reactor.core.publisher.Mono;
 @Service
 public class GreeterService {
 
-
-	@Autowired
 	private final RestTemplate rest;
 
-	@Autowired
 	private WebClient.Builder webClient;
 
 	private static final String BACKEND_SERVICE="greeter-messages";
@@ -47,9 +42,6 @@ public class GreeterService {
 			.queryParam("name", "{name}")
 			.build()
 			.toUriString();
-
-
-
 
 	public GreeterService(RestTemplate restTemplate, WebClient.Builder webClient) {
 		this.rest = restTemplate;
