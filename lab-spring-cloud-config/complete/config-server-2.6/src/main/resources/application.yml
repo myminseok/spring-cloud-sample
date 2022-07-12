@@ -6,4 +6,4 @@ spring:
       server.git:
         #uri: file:///Users/minseok/_dev/spring-cloud-sample-configrepo
         uri: https://github.com/myminseok/spring-cloud-sample-configrepo
-        default-label: master
+        default-label: main

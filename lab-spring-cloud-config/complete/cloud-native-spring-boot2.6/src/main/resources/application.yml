@@ -3,12 +3,15 @@ spring:
     name: my-cloud-native-spring
     profiles.active: dev
   config:
-    import: configserver:http://localhost:8888
+    #import: configserver:http://localhost:8888
     #import: optional:configserver:http://localhost:8888
-#    #import: configserver:${vcap.services.p-config-server.credentials.uri:http://localhost:8888}
-  cloud:
-    bootstrap:
-      enabled: true
+    ## on TAS, you can comment out spring.cloud.config.uri. TAS will automatically connect if you bind the app with config server instance.
+    import: configserver:${vcap.services.my-config-server.credentials.uri:http://localhost:8888}
+    
+  ## this enables to use 'bootstrap.yaml'. requies 'pring-cloud-starter-bootstrap" in pom.xml
+  #cloud:
+  #  bootstrap:
+  #    enabled: true
 
 
 management:
@@ -17,4 +20,4 @@ management:
       exposure:
         include: '*'
 
-cook.special: "Kim Chi in cloud-native-spring app"
+cook.special: "Kim Chi (from app)"
