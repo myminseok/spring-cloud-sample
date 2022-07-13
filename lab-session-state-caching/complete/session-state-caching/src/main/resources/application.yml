@@ -1,12 +1,9 @@
 spring:
   application:
     name: cloud-native-spring
-  main:
-    allow-bean-definition-overriding: true
   profiles.active: dev
 
 server.port: 8080
-
 
 management:
   endpoints:
