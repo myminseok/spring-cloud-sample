@@ -1,4 +1,4 @@
-package com.example.cloudnativespring;
+package com.example.sessionstatecaching;
 
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,6 +12,11 @@ import java.util.List;
 
 @RestController
 public class SessionTest {
+
+	@GetMapping("/")
+	public String getSessionNotes() {
+		return "Hello";
+	}
 
 	@GetMapping("/getSessionNotes")
 	public List<String> getSessionNotes(HttpServletRequest request) {
