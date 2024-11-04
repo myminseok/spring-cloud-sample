@@ -6,7 +6,7 @@ spring:
     #import: configserver:http://localhost:8888
     #import: optional:configserver:http://localhost:8888
     ## on TAS, you can comment out spring.cloud.config.uri. TAS will automatically connect if you bind the app with config server instance.
-    import: configserver:${vcap.services.my-config-server.credentials.uri:http://localhost:8888}
+    #import: configserver:${vcap.services.my-config-server.credentials.uri:http://localhost:8888}
     
   ## this enables to use 'bootstrap.yaml'. requies 'pring-cloud-starter-bootstrap" in pom.xml
   #cloud:
